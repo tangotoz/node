@@ -1,0 +1,18 @@
+# complled output
+/dist
+/node_modules
+
+# logs
+logs
+*.logs
+npm-debug.log*
+
+# OS
+.DS_Store
+
+#IDE - Vscode
+.vscode/*
+!.vscode/settigns.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
