@@ -19,30 +19,29 @@ const data = [
     {
         id: 1,
         title: '关山月',
-        content: '明月出天山, 苍茫云海间'
+        content: '明月出天山, 苍茫云海间',
     },
     {
         id: 2,
         title: '望岳',
-        content: '会当凌绝顶, 一览众山小'
+        content: '会当凌绝顶, 一览众山小',
     },
     {
         id: 3,
         title: '忆江南',
-        content: '日出江花红胜火, 春来江水绿如蓝'
-    }
+        content: '日出江花红胜火, 春来江水绿如蓝',
+    },
 ];
 
 app.get('/posts', (req, resp) => {
-    resp.send(data)
+    resp.send(data);
 });
 
 app.get('/posts/:postId', (req, resp) => {
-
     // 获取内容id
     const { postId } = req.params;
     // 查找对应的文章
-    const post = data.filter(item => item.id == parseInt(postId, 10));
+    const post = data.filter((item) => item.id == parseInt(postId, 10));
     // 作出响应
     resp.send(post[0]);
 });
@@ -62,7 +61,6 @@ app.post('/posts', (req, resp) => {
 
     // 作出响应
     resp.send({
-        message: `成功创建了内容: ${content}`
+        message: `成功创建了内容: ${content}`,
     });
 });
-
