@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const port = 3000;
 
@@ -42,7 +42,7 @@ app.get('/posts/:postId', (req, resp) => {
     // 获取内容id
     const { postId } = req.params;
     // 查找对应的文章
-    const post = data.filter(item => item.id == postId);
+    const post = data.filter(item => item.id == parseInt(postId, 10));
     // 作出响应
     resp.send(post[0]);
 });
@@ -65,3 +65,4 @@ app.post('/posts', (req, resp) => {
         message: `成功创建了内容: ${content}`
     });
 });
+
